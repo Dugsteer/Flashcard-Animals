@@ -148,11 +148,12 @@ h4 {
     z-index: -1; } }
 
 .loader-container {
-  width: 300px;
-  height: 500px; }
+  width: 500px;
+  height: 400px;
+  margin-left: 5rem; }
   .loader-container img {
-    height: 100%;
-    width: 100%; }
+    height: 80%;
+    width: 80%; }
 
 .ghost {
   animation: float 3s ease-out infinite; }
@@ -541,7 +542,7 @@ h4 {
   .introduction__img {
     width: 230px;
     height: 230px;
-    background-color: #368cbf;
+    background-color: #7ebc59;
     padding: 20px;
     align-self: center;
     justify-self: flex-end;
@@ -604,93 +605,66 @@ h4 {
     .wrapper {
       width: 100vw; } }
 
-.main {
+.content {
   grid-row: 2/3;
   grid-column: 2/3;
-  align-self: start;
-  justify-self: center;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; }
-  @media only screen and (max-width: 37.5em) {
-    .main {
-      grid-row: 1/2;
-      margin-top: 4rem; } }
+  flex-direction: column; }
 
-.overlay {
-  position: relative;
-  margin-top: 3rem;
-  width: 800px;
-  height: 500px;
-  transform: all 5s ease;
-  border-radius: 5px;
-  box-shadow: 3px 3px 3px 2px rgba(0, 0, 0, 0.4); }
+.flashcard {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  width: 750px;
+  height: 600px;
+  margin: auto; }
+  .flashcard__container {
+    width: 100%; }
+  .flashcard__art {
+    height: 75%;
+    width: auto;
+    border-radius: 8px; }
+  .flashcard__flip-card {
+    background-color: transparent;
+    width: 650px;
+    height: 500px;
+    margin: 2rem auto;
+    perspective: 1000px; }
+    .flashcard__flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      text-align: center;
+      transition: all 0.2s;
+      transform-style: preserve-3d;
+      box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.4); }
+    .flashcard__flip-card-front {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #fff;
+      transform: rotateX(0deg);
+      background-color: #7ebc59; }
+    .flashcard__flip-card-front, .flashcard__flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden; }
+    .flashcard__flip-card-back {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #368cbf;
+      transform: rotateX(180deg); }
 
-.overlay .after {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 5px;
-  display: none;
-  transform: all 5s ease; }
+#flashcard__text {
+  font-size: 4rem;
+  color: #fff; }
 
-.overlay:hover .after {
-  display: block;
-  background: rgba(0, 0, 0, 0.4);
-  transform: all 5s ease; }
-
-.image-art {
-  height: 100%;
-  width: 100%;
-  border-radius: 5px; }
-
-.image-text {
-  position: absolute;
-  font-size: 6rem;
-  font-weight: 300;
-  text-align: center;
-  width: 60%;
-  height: 30%;
-  color: white;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  display: none;
-  transition: all .2s ease;
-  z-index: 2000; }
-
-.overlay:hover .image-text {
-  display: block; }
-
-@media only screen and (max-width: 62.5em) {
-  .overlay {
-    width: 600px;
-    height: 375px; }
-  .image-text {
-    width: 300;
-    height: 150;
-    font-size: 7rem; } }
-
-@media only screen and (max-width: 50em) {
-  .overlay {
-    width: 600px;
-    height: 400px; }
-  .image-text {
-    width: 300;
-    height: 150;
-    font-size: 8rem; } }
-
-@media only screen and (max-width: 37.5em) {
-  .overlay {
-    width: 400px;
-    height: 250px; }
-  .image-text {
-    width: 300;
-    height: 150;
-    font-size: 6rem; } }
+.turnMe {
+  transform: rotateX(180deg); }
 
 .links {
   grid-row: 3/4;

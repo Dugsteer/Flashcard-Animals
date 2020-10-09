@@ -1,109 +1,210 @@
-.main {
+.content {
     grid-row: 2/3;
     grid-column: 2/3;
-    align-self: start;
-    justify-self: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    @media only screen and (max-width:$bp-small){
-        grid-row: 1/2;
-        margin-top: 4rem;
-        }
 }
 
-.overlay {
-    position: relative;
-    margin-top: 3rem;
-    width: 800px;
-    height: 500px;
-    transform: all 5s ease;
-    border-radius: 5px;
-    box-shadow: $box-shadow-large;
-}
-
-.overlay .after {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-    display: none;
-    transform: all 5s ease;
+.flashcard {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    width: 750px;
+    height: 600px;
+    margin: auto;
     
-}
+    
 
-.overlay:hover .after {
-    display: block;
-    background: rgba(0,0,0, .4);
-    transform: all 5s ease;
-}
+    &__container {
+        width: 100%;
+        
 
-.image-art {
-    height: 100%;
-    width: 100%;
-    border-radius: 5px;
-}
+    }
 
-.image-text {
-            position: absolute;
-            font-size: 6rem;
-            font-weight: 300;
+    &__art {
+        height: 75%;
+        width: auto;
+        border-radius: 8px;
+       
+    }
+
+
+    &__flip-card {
+        background-color: transparent;
+        width: 650px;
+        height: 500px;
+        margin: 2rem auto;
+        perspective: 1000px;
+        // background-color: #fff;
+        
+
+        &-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
             text-align: center;
-            width: 60%;
-            height: 30%;
-            color:white;
-            top: 50%;
-            left: 50%;
-            transform: translateX(-50%);
-            display: none;
-            transition: all .2s ease;
-            z-index: 2000;
+            transition: all 0.2s;
+            transform-style: preserve-3d;
+            box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.4);
+        }
+
+        &-front {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff;
+            transform: rotateX(0deg);
+            background-color: $color-green;
+        }
+
+
+        &-front,
+        &-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+        }
+
+        &-back {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $color-blue;
+           
+            transform: rotateX(180deg);
+        }
+
+     
+      
+
+
+
+
+
+    }
+
+}
+
+#flashcard__text {
+    font-size: 4rem;
+    color:#fff;
+
+}
+
+.turnMe {
+    transform: rotateX(180deg);
+}
+
+// .main {
+//     grid-row: 2/3;
+//     grid-column: 2/3;
+//     align-self: start;
+//     justify-self: center;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+
+//     @media only screen and (max-width:$bp-small){
+//         grid-row: 1/2;
+//         margin-top: 4rem;
+//         }
+// }
+
+// .overlay {
+//     position: relative;
+//     margin-top: 3rem;
+//     width: 800px;
+//     height: 500px;
+//     transform: all 5s ease;
+//     border-radius: 5px;
+//     box-shadow: $box-shadow-large;
+// }
+
+// .overlay .after {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     border-radius: 5px;
+//     display: none;
+//     transform: all 5s ease;
+    
+// }
+
+// .overlay:hover .after {
+//     display: block;
+//     background: rgba(0,0,0, .4);
+//     transform: all 5s ease;
+// }
+
+// .image-art {
+//     height: 100%;
+//     width: 100%;
+//     border-radius: 5px;
+// }
+
+// .image-text {
+//             position: absolute;
+//             font-size: 6rem;
+//             font-weight: 300;
+//             text-align: center;
+//             width: 60%;
+//             height: 30%;
+//             color:white;
+//             top: 50%;
+//             left: 50%;
+//             transform: translateX(-50%);
+//             display: none;
+//             transition: all .2s ease;
+//             z-index: 2000;
 
           
             
-    }
+//     }
         
-    .overlay:hover .image-text {
-        display: block;
-    }
+//     .overlay:hover .image-text {
+//         display: block;
+//     }
 
 
-@media only screen and (max-width:$bp-large) {
-    .overlay {
-        width: 600px;
-        height: 375px;
-    }
+// @media only screen and (max-width:$bp-large) {
+//     .overlay {
+//         width: 600px;
+//         height: 375px;
+//     }
 
-    .image-text {
-        width: 300;
-        height: 150;
-        font-size: 7rem;
-    }
-}
-@media only screen and (max-width:$bp-medium) {
-    .overlay {
-        width: 600px;
-        height: 400px;
-    }
-    .image-text {
-        width: 300;
-        height: 150;
-        font-size: 8rem;
-    }
-}
-@media only screen and (max-width:$bp-small) {
-    .overlay {
-        width: 400px;
-        height: 250px;
-    }
+//     .image-text {
+//         width: 300;
+//         height: 150;
+//         font-size: 7rem;
+//     }
+// }
+// @media only screen and (max-width:$bp-medium) {
+//     .overlay {
+//         width: 600px;
+//         height: 400px;
+//     }
+//     .image-text {
+//         width: 300;
+//         height: 150;
+//         font-size: 8rem;
+//     }
+// }
+// @media only screen and (max-width:$bp-small) {
+//     .overlay {
+//         width: 400px;
+//         height: 250px;
+//     }
 
-    .image-text {
-        width: 300;
-        height: 150;
-        font-size: 6rem;
-    }
-}
+//     .image-text {
+//         width: 300;
+//         height: 150;
+//         font-size: 6rem;
+//     }
+// }
