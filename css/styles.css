@@ -531,7 +531,7 @@ h4 {
     .introduction {
       grid-row: 2/3;
       justify-content: center;
-      width: 400px;
+      width: 360px;
       height: 400px;
       flex-direction: column; } }
   .introduction a {
@@ -602,7 +602,7 @@ h4 {
   @media only screen and (max-width: 50em) {
     .wrapper {
       grid-template-columns: 0 1fr; } }
-  @media only screen and (max-width: 28em) {
+  @media only screen and (max-width: 37.5em) {
     .wrapper {
       width: 100vw; } }
 
@@ -678,8 +678,8 @@ h4 {
 
 @media only screen and (max-width: 50em) {
   .overlay {
-    width: 600px;
-    height: 400px; }
+    width: 450px;
+    height: 310px; }
   .image-text {
     width: 300;
     height: 150;
@@ -687,8 +687,8 @@ h4 {
 
 @media only screen and (max-width: 37.5em) {
   .overlay {
-    width: 400px;
-    height: 250px; }
+    width: 360px;
+    height: 220px; }
   .image-text {
     width: 300;
     height: 150;
@@ -717,7 +717,7 @@ h4 {
   @media only screen and (max-width: 37.5em) {
     .links {
       justify-content: center;
-      width: 400px;
+      width: 360px;
       height: 300px; } }
   .links__text {
     margin-bottom: 3rem;
@@ -753,9 +753,6 @@ h4 {
   border-top: 1px solid #fff;
   box-shadow: 3px 0px 1px 0px rgba(0, 0, 0, 0.4); }
   @media only screen and (max-width: 75em) {
-    .footer {
-      width: 100vw; } }
-  @media only screen and (max-width: 28em) {
     .footer {
       width: 100vw; } }
   .footer__copyright {

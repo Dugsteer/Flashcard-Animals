@@ -52,16 +52,18 @@ let imageArt = document.getElementById('image-art');
 let imageText = document.getElementById('image-text');
 
 var imageList = [
-    "bear.jpg",
     "bird.jpg",
     "butterfly.jpg",
     "cat.jpg",
     "chicken.jpg",
     "cow.jpg",
+    "crocodile.jpg",
+    "deer.jpg",
     "dog.jpg",
     "dolphin.jpg",
     "elephant.jpg",
     "fish.jpg",
+    "fox.jpg",
     "frog.jpg",
     "giraffe.jpg",
     "goat.jpg",
@@ -114,6 +116,7 @@ function goBackwards() {
     count.innerHTML = `${x + 1}/${imageList.length}`;
     return x;
   } else {
+    
     imageArt.src = ` /img/${imageList[0]}`;
     imageText.textContent = `${imageList[0].slice(0, -4)}`;
     count.innerHTML = `${1}/${imageList.length}`;
