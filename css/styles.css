@@ -62,7 +62,7 @@ h4 {
   justify-content: center;
   grid-row: 3/4;
   grid-column: 2/3;
-  width: 60%;
+  width: 100%;
   margin: auto;
   margin-top: 3rem;
   height: 5vw; }
@@ -532,7 +532,7 @@ h4 {
       grid-row: 2/3;
       justify-content: center;
       width: 360px;
-      height: 400px;
+      height: 550px;
       flex-direction: column; } }
   .introduction a {
     display: inline;

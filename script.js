@@ -55,14 +55,14 @@ var imageList = [
     "bird.jpg",
     "butterfly.jpg",
     "cat.jpg",
-    "chicken.jpg",
+    "chicken1.jpg",
     "cow.jpg",
     "crocodile.jpg",
     "deer.jpg",
     "dog.jpg",
     "dolphin.jpg",
     "elephant.jpg",
-    "fish.jpg",
+    "fish1.jpg",
     "fox.jpg",
     "frog.jpg",
     "giraffe.jpg",
@@ -92,7 +92,21 @@ let x = imageList.indexOf(z);
 
 
 function goForwards() {
-  if (x < imageList.length - 1) {
+    // CHECKING FOR FISH OR CHICKEN
+  if (imageList[x+1] === "chicken1.jpg"){
+    x++;
+    imageArt.src =  "img/chicken1.jpg";
+   imageText.textContent = "chicken";
+    count.innerHTML = `${x + 1}/${imageList.length}`;
+    return x;
+  } else if (imageList[x+1] === "fish1.jpg"){
+    x++;
+    imageArt.src =  "img/fish1.jpg";
+   imageText.textContent = "fish";
+    count.innerHTML = `${x + 1}/${imageList.length}`;
+    return x;
+  } else if 
+  (x < imageList.length - 1) {
     x++;
     imageArt.src =  `/img/${imageList[x]}`;
    imageText.textContent = `${imageList[x].slice(0, -4)}`;
@@ -109,14 +123,28 @@ function goForwards() {
 }
 
 function goBackwards() {
-  if (x > 0) {
+  // CHECKING FOR FISH OR CHICKEN
+  if  (imageList[x-1] === "chicken1.jpg"){
+    x++;
+    imageArt.src =  "img/chicken1.jpg";
+   imageText.textContent = "chicken";
+    count.innerHTML = `${x + 1}/${imageList.length}`;
+    return x;
+  } else if (imageList[x-1] === "fish1.jpg"){
+    x++;
+    imageArt.src =  "img/fish1.jpg";
+   imageText.textContent = "fish";
+    count.innerHTML = `${x + 1}/${imageList.length}`;
+    return x;
+  } else if 
+  (x > 0) {
     x--;
     imageArt.src =  `/img/${imageList[x]}`;
     imageText.textContent = `${imageList[x].slice(0, -4)}`;
     count.innerHTML = `${x + 1}/${imageList.length}`;
     return x;
   } else {
-    
+
     imageArt.src = ` /img/${imageList[0]}`;
     imageText.textContent = `${imageList[0].slice(0, -4)}`;
     count.innerHTML = `${1}/${imageList.length}`;
