@@ -13,8 +13,10 @@ function croaker(){
     mainpic.innerHTML = '<img src="img/froggy.png" alt="decorative">' 
 }
 
+const frogster = new Audio('sounds/frog.mp3')
+
 function changefrog(){
-    const frogster = new Audio('sounds/frog.ogg')
+
     frogster.play();
     mainpic.innerHTML = '<img src="img/froggy2.png" alt="decorative">' 
     setTimeout(croaker, 1000);
